@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidLeftProject</string>
+    <string name="activity_life">Activity生命周期</string>
+</resources>
