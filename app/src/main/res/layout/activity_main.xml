@@ -13,5 +13,11 @@
         android:text="@string/activity_life"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/activity_launchModel"
+        style="@style/ButtonStyle"
+        android:text="@string/activity_launch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

@@ -3,7 +3,9 @@ package com.xh.example.androidleftproject
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_life.*
 
 /****
  * @author 栾桂明
@@ -45,6 +47,29 @@ class LifeActivity : AppCompatActivity() {
 
     }
 
+    /***
+     * 在Activity异常终止的时候进行数据的保存
+     */
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        Log.d(TAG, "onSaveInstanceState 保存数据  ${activitylife.text}")
+        outState.putString("data", activitylife.text.toString())
+    }
+
+    /***
+     * 在异常终止之后重新启动恢复数据
+     */
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.d(TAG, "onRestoreInstanceState 恢复数据")
+
+        activitylife.text = savedInstanceState.getString("data")
+    }
+
+    /****
+     * 因为在启动一个新的activity的时候这个onpause方法是会先点用的之后
+     * 才会执行 新的activity的生命周期方法 显示出来，因此onpause中不能作重量级的操作
+     */
     override fun onPause() {
         super.onPause()
         Log.d(TAG, "onPause")

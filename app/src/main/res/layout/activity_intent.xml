@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LifeActivity">
+    tools:context=".IntentActivity">
 
     <TextView
-        android:id="@+id/activitylife"
+        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="测试Activity异常终止时数据的保存"
-        style="@style/ButtonStyle"
+        android:text="隐示意图启动的Activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

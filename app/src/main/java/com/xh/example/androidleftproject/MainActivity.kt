@@ -20,6 +20,13 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
+        activity_launchModel.setOnClickListener {
+            Intent(this@MainActivity, StartModelActivity::class.java)
+                .apply {
+                    startActivity(this)
+                }
+        }
+
 
     }
 

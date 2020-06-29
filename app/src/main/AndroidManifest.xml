@@ -9,7 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LifeActivity"></activity>
+        <activity android:name=".IntentActivity">
+            <intent-filter>
+                <action android:name="com.example.start_activity" />
+
+                <category android:name="com.example.startactivity.category1" />
+                <category android:name="com.example.startactivity.category2" />
+                <!--                这个category是必须添加的-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.startactivity.category3" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".StartModelActivity"
+            android:launchMode="singleTask">
+
+            <!-- android:launchMode="standard" -->
+
+        </activity>
+        <activity
+            android:name=".LifeActivity"
+            android:configChanges="orientation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
